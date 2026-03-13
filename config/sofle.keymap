@@ -75,7 +75,7 @@ behaviors {
                    &kp PG_UP &kp PG_DN &click_r RCLK LCLK &mo LOWER &kp SPACE         &kp SPACE  &mo RAISE  &kp RET  &kp DEL   &kp BSPC
             >;
 
-            sensor-bindings = <&inc_dec_kp RIGHT LEFT &inc_dec_kp UP DOWN>;
+            sensor-bindings = <&inc_dec_kp LEFT RIGT &inc_dec_kp UP DOWN>;
         };
 
         lower_layer {
