@@ -64,18 +64,18 @@ behaviors {
             label = "default";
 
             // ------------------------------------------------------------------------------------------------------------
-            // |super+pgup|  1  |  2  |  3   |  4   |  5   |                |  6   |  7    |  8    |  9   |   0   |super+pgdn|
+            //|super+pgup| 1 |  2  |  3   |  4   |  5   |                   |  6   |  7    |  8    |  9   |   0   |super+pgdn|
             // |CAPSWRD|  Q  |  W  |  E   |  R   |  T   |                   |  Y   |  U    |  I    |  O   |   P   | BKSPC   |
-            // |  ESC  |  A  |S ctrl|D shift|F alt|G super|                 |H super|J alt |K shift|L ctrl|   ;   |   '   |
-            // |  TAB  |  Z  |  X  |  C   |  V   |  B   |  MUTE  |  |       |  N   |  M    |  ,    |  .   |   /   | PLAY/PAUSE |
-            //               |PGDUP | PGDWN | CLICK rclick| LOWER| SPACE |  |SPACE | RAISE | DEL   | PLAY/PAUSE   | PSCRN  |
+            // |  ESC  |  A  |  S  |  D   |  F   |  G   |                   |  H   |  J    |  K    |  L   |   ;   |   '   |
+            // |  TAB  |  Z  |  X  |  C   |  V   |  B   |  MUTE   |  |      |  N   |  M    |  ,    |  .   |   /   | PLAY/PAUSE |
+            //            |SUPER | ALT |CLICKrclick|LOWER|SPACEshift|SPACEctrl| RAISE | DEL   | PLAY/PAUSE   | PSCRN  |
 
             bindings = <
 &super_pgup &kp N1  &kp N2    &kp N3    &kp N4     &kp N5                             &kp N6     &kp N7     &kp N8     &kp N9    &kp N0    &super_pgdn
 &caps_word &kp Q   &kp W     &kp E     &kp R      &kp T                               &kp Y      &kp U      &kp I      &kp O     &kp P     &kp BSPC
-&kp ESC    &kp A   &mt RCTRL S &mt LSHIFT D &mt LALT F &mt LGUI G                     &mt RGUI H &mt RALT J &mt RSHIFT K &mt RCTRL L &kp SEMI  &kp SQT
+&kp ESC    &kp A   &kp     S &kp D     &kp F      &kp G                       &kp H   &kp J      &kp K      &kp L      &kp SEMI  &kp SQT
 &kp TAB    &kp Z   &kp X     &kp C     &kp V      &kp B      &kp C_MUTE    &none      &kp N      &kp M      &kp COMMA  &kp DOT   &kp FSLH  &kp RET
-                   &kp PG_UP &kp PG_DN &click_r RCLK LCLK &mo LOWER &kp SPACE         &kp SPACE  &mo RAISE  &kp DEL  &kp C_PP   &kp PSCRN
+                   &kp LGUI &kp RALT &click_r RCLK LCLK &mo LOWER &mt LSHIFT SPACE       &mt RCTRL SPACE  &mo RAISE  &kp DEL  &kp C_PP   &kp PSCRN
             >;
 
             sensor-bindings = <&inc_dec_kp LEFT RIGHT &inc_dec_kp UP DOWN>;
@@ -108,16 +108,16 @@ behaviors {
 
             // ------------------------------------------------------------------------------------------------------------
             // | BTCLR | BT1  | BT2  |  BT3  |  BT4  |  BT5 |                |      |      |       |      |       |       |
-            // |       |      |      |  7   |  8   |   9  |                  |      |PG_UP | PGDN  |      |       |       |
+            // |       |      |      |  7   |  8   |   9  |                  |      |      |       |      |       |       |
             // |       | ALT  | CTRL |  4   |  5   |   6  |                  |  <-  |  v   |   ^   |  ->  |       |         |
             // |       | UNDO |  0   |  1   |  2   |   3  |        |  |      |      |      |       |      |       |       |
-            //                |      |       |       |      |      |  |      |      |      |       |      |
+            //                |      |      |      |      |        |  |      |      |PG_UP | PG_DN |      |
 
             bindings = <
 &bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4                    &trans     &trans    &trans    &trans     &trans   &trans
-&trans      &trans       &trans         &kp N7        &kp N8        &kp N9                          &trans     &kp PG_UP &kp PG_DN &trans     &trans   &trans
+&trans      &trans       &trans         &kp N7        &kp N8        &kp N9                          &trans     &trans    &trans    &trans     &trans   &trans
 &trans      &kp LALT      &kp LCTRL     &kp N4        &kp N5        &kp N6                          &kp LEFT   &kp DOWN  &kp UP    &kp RIGHT  &trans    &trans
-&trans      &kp K_UNDO    &kp N0        &kp N1        &kp N2        &kp N3        &trans    &trans  &trans     &trans    &trans    &trans     &trans   &trans
+&trans      &kp K_UNDO    &kp N0        &kp N1        &kp N2        &kp N3        &trans    &trans  &trans     &kp PG_UP &kp PG_DN &trans     &trans   &trans
                           &trans        &trans        &trans        &trans        &trans    &trans  &trans     &trans    &trans    &trans
             >;
 
