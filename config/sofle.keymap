@@ -79,14 +79,14 @@ behaviors {
             //|CAPSWRDshift| Q | W |  E   |  R   |  T   |                   |  Y   |  U    |  I    |  O   |   P   | BKSPC   |
             // |  ESC  |  A  |  S  |  D   |  F   |  G   |                   |  H   |  J    |  K    |  L   |   ;   |   '   |
             // |  TAB  |  Z  |  X  |  C   |  V   |  B   |  MUTE   |  |      |  N   |  M    |  ,    |  .   |   /   | PLAY/PAUSE |
-            //            |SUPER | ALT |CLICKrclick|LOWER|SPACEshift|SPACEctrl| RAISE | DEL   | PLAY/PAUSE   | PSCRN  |
+            //            |SUPER | ALT |CLICKrclick|LOWER|SPACEctrl|SPACEshift| RAISE | DEL   | PLAY/PAUSE   | PSCRN  |
 
             bindings = <
-&super_pgup &kp N1  &kp N2    &kp N3    &kp N4     &kp N5                             &kp N6     &kp N7     &kp N8     &kp N9    &kp N0    &super_pgdn
-&caps_shift LSHIFT 0 &kp Q   &kp W     &kp E     &kp R      &kp T                               &kp Y      &kp U      &kp I      &kp O     &kp P     &kp BSPC
-&kp ESC    &kp A   &kp   S &kp D     &kp F      &kp G                       &kp H   &kp J      &kp K      &kp L      &kp SEMI  &kp SQT
-&kp TAB    &kp Z   &kp X     &kp C     &kp V      &kp B      &kp C_MUTE    &none      &kp N      &kp M      &kp COMMA  &kp DOT   &kp FSLH  &kp RET
-                   &kp LGUI &kp RALT &click_r RCLK LCLK &mo LOWER &mt LSHIFT SPACE       &mt RCTRL SPACE  &mo RAISE  &kp DEL  &kp C_PP   &kp PSCRN
+&super_pgup &kp N1  &kp N2    &kp N3    &kp N4     &kp N5                             &kp N6     &kp N7     &kp N8     &kp N9     &kp N0    &super_pgdn
+&caps_shift LSHIFT 0 &kp Q   &kp W     &kp E     &kp R      &kp T                                &kp Y      &kp U      &kp I      &kp O     &kp P     &kp BSPC
+&kp ESC    &kp A   &kp   S &kp D     &kp F      &kp G                                 &kp H      &kp J      &kp K      &kp L      &kp SEMI  &kp SQT
+&kp TAB    &kp Z   &kp X     &kp C     &kp V      &kp B      &kp C_MUTE    &none      &kp N      &kp M      &kp COMMA  &kp DOT    &kp FSLH  &kp RET
+                   &kp LGUI &kp RALT &click_r RCLK LCLK &mo LOWER &mt RCTRL SPACE  &mt LSHIFT SPACE &mo RAISE &kp DEL  &kp C_PP   &kp PSCRN
             >;
 
             sensor-bindings = <&inc_dec_kp LEFT RIGHT &inc_dec_kp UP DOWN>;
