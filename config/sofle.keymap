@@ -108,7 +108,7 @@ behaviors {
  &trans          &kp GRAVE  &kp TILDE   &kp HASH  &kp AMPS   &kp PIPE                     &kp CARET  &kp LBRC   &kp RBRC  &kp LBKT &kp RBKT  &kp F12
  &trans          &kp EXCL   &kp UNDER   &kp SEMI  &kp EQUAL  &kp DLLR                     &kp AT     &kp LPAR   &kp RPAR  &kp UNDER &kp SEMI &trans
  &trans          &kp PRCNT  &kp QMARK   &kp STAR  &kp PLUS   &kp BSLH   &trans    &trans  &kp FSLH   &kp MINUS  &kp LT    &kp GT   &kp DQT   &trans
-                            &trans      &trans    &mkp LCLICK &trans    &trans    &trans  &trans     &trans     &trans    &trans
+                            &trans      &trans    &mkp LCLK &trans    &trans    &trans  &trans     &trans     &trans    &trans
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp C_VOL_DN C_VOL_UP>;
