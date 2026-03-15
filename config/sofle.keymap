@@ -56,6 +56,12 @@ behaviors {
         tapping-term-ms = <200>;
         bindings = <&mkp>, <&mkp>;
     };
+    caps_shift: caps_shift {
+      compatible = "zmk,behavior-hold-tap";
+      #binding-cells = <2>;
+      tapping-term-ms = <200>;;
+      bindings =  <&kp>, <&caps_word>;
+    };
 };
     keymap {
         compatible = "zmk,keymap";
@@ -65,14 +71,14 @@ behaviors {
 
             // ------------------------------------------------------------------------------------------------------------
             //|super+pgup| 1 |  2  |  3   |  4   |  5   |                   |  6   |  7    |  8    |  9   |   0   |super+pgdn|
-            // |CAPSWRD|  Q  |  W  |  E   |  R   |  T   |                   |  Y   |  U    |  I    |  O   |   P   | BKSPC   |
+            //|CAPSWRDshift| Q | W |  E   |  R   |  T   |                   |  Y   |  U    |  I    |  O   |   P   | BKSPC   |
             // |  ESC  |  A  |  S  |  D   |  F   |  G   |                   |  H   |  J    |  K    |  L   |   ;   |   '   |
             // |  TAB  |  Z  |  X  |  C   |  V   |  B   |  MUTE   |  |      |  N   |  M    |  ,    |  .   |   /   | PLAY/PAUSE |
             //            |SUPER | ALT |CLICKrclick|LOWER|SPACEshift|SPACEctrl| RAISE | DEL   | PLAY/PAUSE   | PSCRN  |
 
             bindings = <
 &super_pgup &kp N1  &kp N2    &kp N3    &kp N4     &kp N5                             &kp N6     &kp N7     &kp N8     &kp N9    &kp N0    &super_pgdn
-&caps_word &kp Q   &kp W     &kp E     &kp R      &kp T                               &kp Y      &kp U      &kp I      &kp O     &kp P     &kp BSPC
+&caps_shift LSHIFT 0 &kp Q   &kp W     &kp E     &kp R      &kp T                               &kp Y      &kp U      &kp I      &kp O     &kp P     &kp BSPC
 &kp ESC    &kp A   &kp     S &kp D     &kp F      &kp G                       &kp H   &kp J      &kp K      &kp L      &kp SEMI  &kp SQT
 &kp TAB    &kp Z   &kp X     &kp C     &kp V      &kp B      &kp C_MUTE    &none      &kp N      &kp M      &kp COMMA  &kp DOT   &kp FSLH  &kp RET
                    &kp LGUI &kp RALT &click_r RCLK LCLK &mo LOWER &mt LSHIFT SPACE       &mt RCTRL SPACE  &mo RAISE  &kp DEL  &kp C_PP   &kp PSCRN
@@ -90,14 +96,14 @@ behaviors {
             // |       |  `  |  ~  |  #   |  &   |  |  |                    |  ^   |  {    |  }    |  [   |   ]   |  F12  |
             // |       |  !  |  _  |  ;   |  =   |  $   |                   |  @   |  (    |  )    |  _   |   ;   |       |
             // |       |  %  |  ?  |  *   |  +   |  \   |        |  |       |  /   |  -    |  <    |  >   |   "   |       |
-            //               |     |      |      |      |        |  |       |      |       |       |      |
+            //               |     |      |CLICK |      |        |  |       |      |       |       |      |
 
             bindings = <
  &studio_unlock  &kp F1     &kp F2      &kp F3    &kp F4     &kp F5                       &kp F6     &kp F7     &kp F8    &kp F9   &kp F10   &kp F11
  &trans          &kp GRAVE  &kp TILDE   &kp HASH  &kp AMPS   &kp PIPE                     &kp CARET  &kp LBRC   &kp RBRC  &kp LBKT &kp RBKT  &kp F12
  &trans          &kp EXCL   &kp UNDER   &kp SEMI  &kp EQUAL  &kp DLLR                     &kp AT     &kp LPAR   &kp RPAR  &kp UNDER &kp SEMI &trans
  &trans          &kp PRCNT  &kp QMARK   &kp STAR  &kp PLUS   &kp BSLH   &trans    &trans  &kp FSLH   &kp MINUS  &kp LT    &kp GT   &kp DQT   &trans
-                            &trans      &trans    &trans     &trans     &trans    &trans  &trans     &trans     &trans    &trans
+                            &trans      &trans    &mkp LCLICK &trans    &trans    &trans  &trans     &trans     &trans    &trans
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp C_VOL_DN C_VOL_UP>;
