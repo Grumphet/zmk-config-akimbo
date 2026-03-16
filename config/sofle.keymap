@@ -76,9 +76,9 @@ behaviors {
 
             // ------------------------------------------------------------------------------------------------------------
             //|super+pgup| 1 |  2  |  3   |  4   |  5   |                   |  6   |  7    |  8    |  9   |   0   |super+pgdn|
-            //|CAPSWRD | Q   | W   |  E   |  R   |  T   |                   |  Y   |  U    |  I    |  O   |   P   | BKSPC   |
-            // |  ESC  |  A  |  S  |  D   |  F   |  G   |                   |  H   |  J    |  K    |  L   |   ;   |   '   |
-            // |TABshift|  Z |  X  |  C   |  V   |  B   |  MUTE   |  |      |  N   |  M    |  ,    |  .   |   /   |ENTERshift|
+            //|CAPSWRD | Q   | W   |  E   |  R   |  T   |                   |  Y   |  U    |  I    |  O   |   P   |  BKSPC   |
+            // |  ESC  |  A  |  S  |  D   |  F   |  G   |                   |  H   |  J    |  K    |  L   |   ;   |   '      |
+            // |TABshift|  Z |  X  |  C   |  V   |  B   |  MUTE   |  |      |  N   |  M    |  ,    |  .   |   /   |  ENTER   |
             //            |SUPER | ALT |CLICKrclick| CTRL|SPACElower|SPACEraise| SHIFT| DEL   | PSCRN    | PLAY/PAUSE  |
 
             bindings = <
@@ -97,18 +97,18 @@ behaviors {
 
             // TODO: Some binds are waiting for shifted keycode support.
             // ------------------------------------------------------------------------------------------------------------
-            // |       |  F1 |  F2 |  F3  |  F4  |  F5  |                   |  F6  |  F7   |  F8   |  F9  |  F10  |  F11  |
-            // |       |  `  |  ~  |  #   |  &   |  |  |                    |  ^   |  {    |  }    |  [   |   ]   |  F12  |
-            // |       |  !  |  _  |  :   |  =   |  $   |                   |  @   |  (    |  )    |  _   |   ;   |       |
+            // |  F12  |  F1 |  F2 |  F3  |  F4  |  F5  |                   |  F6  |  F7   |  F8   |  F9  |  F10  |  F11  |
+            // |       |  `  |  ~  |  #   |  &   |  |  |                    |  ^   |  {    |  }    |  [   |   ]   |       |
+            // |       |  !  |  _  |  :   |  =   |  $   |                   |  @   |  (    |  )    |  _   |   ;   |  '    |
             // |       |  %  |  ?  |  *   |  +   |  \   |        |  |       |  /   |  -    |  <    |  >   |   "   |       |
-            //               |     |      |CLICK |      |        |  |       |      |       |       |      |
+            //               |     |      |CLICK |      |        |  |       |      |       |       |  studio  |
 
             bindings = <
- &studio_unlock  &kp F1     &kp F2      &kp F3    &kp F4     &kp F5                       &kp F6     &kp F7     &kp F8    &kp F9   &kp F10   &kp F11
- &trans          &kp GRAVE  &kp TILDE   &kp HASH  &kp AMPS   &kp PIPE                     &kp CARET  &kp LBRC   &kp RBRC  &kp LBKT &kp RBKT  &kp F12
- &trans          &kp EXCL   &kp UNDER   &kp COLON &kp EQUAL  &kp DLLR                     &kp AT     &kp LPAR   &kp RPAR  &kp UNDER &kp SEMI &trans
+ &kp F12  &kp F1     &kp F2      &kp F3    &kp F4     &kp F5                       &kp F6     &kp F7     &kp F8    &kp F9   &kp F10   &kp F11
+ &trans          &kp GRAVE  &kp TILDE   &kp HASH  &kp AMPS   &kp PIPE                     &kp CARET  &kp LBRC   &kp RBRC  &kp LBKT &kp RBKT  &trans
+ &trans          &kp EXCL   &kp UNDER   &kp COLON &kp EQUAL  &kp DLLR                     &kp AT     &kp LPAR   &kp RPAR  &kp UNDER &kp SEMI &kp SQT
  &trans          &kp PRCNT  &kp QMARK   &kp STAR  &kp PLUS   &kp BSLH   &trans    &trans  &kp FSLH   &kp MINUS  &kp LT    &kp GT   &kp DQT   &trans
-                            &trans      &trans    &mkp LCLK &trans    &trans    &trans  &trans     &trans     &trans    &trans
+                            &trans      &trans    &mkp LCLK &trans    &trans    &trans  &trans     &trans     &trans    &studio_unlock
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp C_VOL_DN C_VOL_UP>;
