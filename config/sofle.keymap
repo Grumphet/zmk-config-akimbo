@@ -47,7 +47,7 @@ macros {
     #binding-cells = <0>;
     bindings = <&macro_press &kp LGUI>, <&macro_tap &kp PG_UP>, <&macro_release &kp LGUI>;
   };
-  caps_word_macro: caps_word_macro {
+  caps_word_macro: caps_word_macro {  // caps_shift neede this fix otherwise it wouldnt compile...  
     compatible = "zmk,behavior-macro";
     #binding-cells = <0>;
     bindings = <&caps_word>;
@@ -61,7 +61,7 @@ behaviors {
         tapping-term-ms = <200>;
         bindings = <&mkp>, <&mkp>;
     };
-    caps_shift: caps_shift {
+    caps_shift: caps_shift {    //"&caps_shift LSHIFT 0" for CAPSWRDshift
       compatible = "zmk,behavior-hold-tap";
       #binding-cells = <2>;
       tapping-term-ms = <200>;
@@ -76,17 +76,17 @@ behaviors {
 
             // ------------------------------------------------------------------------------------------------------------
             //|super+pgup| 1 |  2  |  3   |  4   |  5   |                   |  6   |  7    |  8    |  9   |   0   |super+pgdn|
-            //|CAPSWRDshift| Q | W |  E   |  R   |  T   |                   |  Y   |  U    |  I    |  O   |   P   | BKSPC   |
+            //|CAPSWRD | Q   | W   |  E   |  R   |  T   |                   |  Y   |  U    |  I    |  O   |   P   | BKSPC   |
             // |  ESC  |  A  |  S  |  D   |  F   |  G   |                   |  H   |  J    |  K    |  L   |   ;   |   '   |
-            // |  TAB  |  Z  |  X  |  C   |  V   |  B   |  MUTE   |  |      |  N   |  M    |  ,    |  .   |   /   | PLAY/PAUSE |
-            //            |SUPER | ALT |CLICKrclick|LOWER|SPACEctrl|SPACEshift| RAISE | DEL   | PLAY/PAUSE   | PSCRN  |
+            // |TABshift|  Z |  X  |  C   |  V   |  B   |  MUTE   |  |      |  N   |  M    |  ,    |  .   |   /   |ENTERshift|
+            //            |SUPER | ALT |CLICKrclick| CTRL|SPACElower|SPACEraise| SHIFT| DEL   | PSCRN    | PLAY/PAUSE  |
 
             bindings = <
-&super_pgup &kp N1  &kp N2    &kp N3    &kp N4     &kp N5                             &kp N6     &kp N7     &kp N8     &kp N9     &kp N0    &super_pgdn
-&caps_shift LSHIFT 0 &kp Q   &kp W     &kp E     &kp R      &kp T                                &kp Y      &kp U      &kp I      &kp O     &kp P     &kp BSPC
-&kp ESC    &kp A   &kp   S &kp D     &kp F      &kp G                                 &kp H      &kp J      &kp K      &kp L      &kp SEMI  &kp SQT
-&kp TAB    &kp Z   &kp X     &kp C     &kp V      &kp B      &kp C_MUTE    &none      &kp N      &kp M      &kp COMMA  &kp DOT    &kp FSLH  &kp RET
-                   &kp LGUI &kp RALT &click_r RCLK LCLK &mo LOWER &mt RCTRL SPACE  &mt LSHIFT SPACE &mo RAISE &kp DEL  &kp C_PP   &kp PSCRN
+&super_pgup &kp N1  &kp N2    &kp N3    &kp N4     &kp N5                            &kp N6     &kp N7     &kp N8     &kp N9    &kp N0    &super_pgdn
+&caps_word  &kp Q   &kp W     &kp E     &kp R      &kp T                             &kp Y      &kp U      &kp I      &kp O     &kp P     &kp BSPC
+&kp ESC     &kp A   &kp S     &kp D     &kp F      &kp G                             &kp H      &kp J      &kp K      &kp L     &kp SEMI  &kp SQT
+&mt LSHIFT TAB &kp Z &kp X    &kp C     &kp V      &kp B     &kp C_MUTE      &none   &kp N      &kp M      &kp COMMA  &kp DOT   &kp FSLH  &kp RET
+              &kp LGUI &kp RALT &click_r RCLK LCLK &kp RCTRL &lt LOWER SPACE &lt RAISE SPACE &kp RSHIFT &kp DEL  &kp PSCRN   &kp C_PP
             >;
 
             sensor-bindings = <&inc_dec_kp LEFT RIGHT &inc_dec_kp UP DOWN>;
@@ -99,14 +99,14 @@ behaviors {
             // ------------------------------------------------------------------------------------------------------------
             // |       |  F1 |  F2 |  F3  |  F4  |  F5  |                   |  F6  |  F7   |  F8   |  F9  |  F10  |  F11  |
             // |       |  `  |  ~  |  #   |  &   |  |  |                    |  ^   |  {    |  }    |  [   |   ]   |  F12  |
-            // |       |  !  |  _  |  ;   |  =   |  $   |                   |  @   |  (    |  )    |  _   |   ;   |       |
+            // |       |  !  |  _  |  :   |  =   |  $   |                   |  @   |  (    |  )    |  _   |   ;   |       |
             // |       |  %  |  ?  |  *   |  +   |  \   |        |  |       |  /   |  -    |  <    |  >   |   "   |       |
             //               |     |      |CLICK |      |        |  |       |      |       |       |      |
 
             bindings = <
  &studio_unlock  &kp F1     &kp F2      &kp F3    &kp F4     &kp F5                       &kp F6     &kp F7     &kp F8    &kp F9   &kp F10   &kp F11
  &trans          &kp GRAVE  &kp TILDE   &kp HASH  &kp AMPS   &kp PIPE                     &kp CARET  &kp LBRC   &kp RBRC  &kp LBKT &kp RBKT  &kp F12
- &trans          &kp EXCL   &kp UNDER   &kp SEMI  &kp EQUAL  &kp DLLR                     &kp AT     &kp LPAR   &kp RPAR  &kp UNDER &kp SEMI &trans
+ &trans          &kp EXCL   &kp UNDER   &kp COLON &kp EQUAL  &kp DLLR                     &kp AT     &kp LPAR   &kp RPAR  &kp UNDER &kp SEMI &trans
  &trans          &kp PRCNT  &kp QMARK   &kp STAR  &kp PLUS   &kp BSLH   &trans    &trans  &kp FSLH   &kp MINUS  &kp LT    &kp GT   &kp DQT   &trans
                             &trans      &trans    &mkp LCLK &trans    &trans    &trans  &trans     &trans     &trans    &trans
             >;
