@@ -75,7 +75,8 @@ behaviors {
       compatible = "zmk,behavior-hold-tap";
       #binding-cells = <2>;
       tapping-term-ms = <200>;
-      flavor = "tap-preferred";
+      quick-tap-ms = <175>;
+      flavor = "hold-preferred";
       hold-while-undecided-linger; // neede for this to work for ctrl combos
       bindings = <&kp>, <&kp>;
     };
