@@ -23,7 +23,11 @@
   quick-tap-ms = <175>; 
 };
 
-/ {
+&lt {
+  tapping-term-ms = <150>; // 200 is default
+};
+
+{
     // Activate ADJUST layer by pressing raise and lower
 
     conditional_layers {
@@ -85,7 +89,7 @@ behaviors {
 &super_pgup &kp N1  &kp N2    &kp N3    &kp N4     &kp N5                            &kp N6     &kp N7     &kp N8     &kp N9    &kp N0    &super_pgdn
 &caps_word  &kp Q   &kp W     &kp E     &kp R      &kp T                             &kp Y      &kp U      &kp I      &kp O     &kp P     &kp BSPC
 &kp ESC     &kp A   &kp S     &kp D     &kp F      &kp G                             &kp H      &kp J      &kp K      &kp L     &kp SEMI  &kp SQT
-&mt LSHIFT TAB &kp Z &kp X    &kp C     &kp V      &kp B     &kp C_MUTE      &none   &kp N      &kp M      &kp COMMA  &kp DOT   &kp FSLH  &kp RET
+&mt RSHIFT TAB &kp Z &kp X    &kp C     &kp V      &kp B     &kp C_MUTE      &none   &kp N      &kp M      &kp COMMA  &kp DOT   &kp FSLH  &kp RET
               &kp LGUI &kp RALT &click_r RCLK LCLK &kp RCTRL &lt LOWER SPACE &lt RAISE SPACE &kp RSHIFT &kp DEL  &kp PSCRN   &kp C_PP
             >;
 
@@ -98,17 +102,17 @@ behaviors {
             // TODO: Some binds are waiting for shifted keycode support.
             // ------------------------------------------------------------------------------------------------------------
             // |  F12  |  F1 |  F2 |  F3  |  F4  |  F5  |                   |  F6  |  F7   |  F8   |  F9  |  F10  |  F11  |
-            // |       |  `  |  ~  |  #   |  &   |  |  |                    |  ^   |  {    |  }    |  [   |   ]   |       |
+            // | BKSPC |  `  |  ~  |  #   |  &   |  |  |                    |  ^   |  {    |  }    |  [   |   ]   |       |
             // |       |  !  |  _  |  :   |  =   |  $   |                   |  @   |  (    |  )    |  _   |   ;   |  '    |
             // |       |  %  |  ?  |  *   |  +   |  \   |        |  |       |  /   |  -    |  <    |  >   |   "   |       |
             //               |     |      |CLICK |      |        |  |       |      |       |       |  studio  |
 
             bindings = <
  &kp F12  &kp F1     &kp F2      &kp F3    &kp F4     &kp F5                       &kp F6     &kp F7     &kp F8    &kp F9   &kp F10   &kp F11
- &trans          &kp GRAVE  &kp TILDE   &kp HASH  &kp AMPS   &kp PIPE                     &kp CARET  &kp LBRC   &kp RBRC  &kp LBKT &kp RBKT  &trans
+ &kp BSPC        &kp GRAVE  &kp TILDE   &kp HASH  &kp AMPS   &kp PIPE                     &kp CARET  &kp LBRC   &kp RBRC  &kp LBKT &kp RBKT  &trans
  &trans          &kp EXCL   &kp UNDER   &kp COLON &kp EQUAL  &kp DLLR                     &kp AT     &kp LPAR   &kp RPAR  &kp UNDER &kp SEMI &kp SQT
  &trans          &kp PRCNT  &kp QMARK   &kp STAR  &kp PLUS   &kp BSLH   &trans    &trans  &kp FSLH   &kp MINUS  &kp LT    &kp GT   &kp DQT   &trans
-                            &trans      &trans    &mkp LCLK &trans    &trans    &trans  &trans     &trans     &trans    &studio_unlock
+                            &trans      &trans    &mkp LCLK  &trans     &trans    &trans  &trans     &trans     &trans    &studio_unlock
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp C_VOL_DN C_VOL_UP>;
