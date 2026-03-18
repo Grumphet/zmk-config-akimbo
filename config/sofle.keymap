@@ -24,10 +24,10 @@
 };
 
 &lt {
-  tapping-term-ms = <150>; // 200 is default
+  tapping-term-ms = <150>;
 };
 
-{
+/ {
     // Activate ADJUST layer by pressing raise and lower
 
     conditional_layers {
