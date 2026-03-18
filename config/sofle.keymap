@@ -78,7 +78,7 @@ behaviors {
       tapping-term-ms = <280>;
       quick-tap-ms = <175>;
       flavor = "hold-preferred";
-      bindings = <&kp> <&kp>;
+      bindings = <&kp>, <&kp>;
     };
 };
     keymap {
