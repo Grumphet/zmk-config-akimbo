@@ -95,8 +95,8 @@ behaviors {
             bindings = <
 &super_pgup &kp N1  &kp N2    &kp N3    &kp N4     &kp N5                            &kp N6     &kp N7     &kp N8     &kp N9    &kp N0    &super_pgdn
 &caps_word  &kp Q   &kp W     &kp F     &kp P      &kp B                             &kp J      &kp L      &kp U      &kp Y     &kp SEMI  &kp BSPC
-&kp ESC     &kp A   &kp R     &kp S     &kp T      &kp V                             &kp M      &kp N      &kp E      &kp I     &kp O     &kp SQT
-&shift_tab LSHIFT TAB &kp Z &kp X &kp C &kp D      &kp G     &kp C_MUTE      &none   &kp K      &kp H      &kp COMMA  &kp DOT   &kp FSLH  &kp RET
+&kp ESC     &kp A   &kp R     &kp S     &kp T      &kp G                             &kp M      &kp N      &kp E      &kp I     &kp O     &kp SQT
+&shift_tab LSHIFT TAB &kp Z &kp X &kp C &kp D      &kp V     &kp C_MUTE      &none   &kp K      &kp H      &kp COMMA  &kp DOT   &kp FSLH  &kp RET
               &kp LGUI &kp RALT &click_r RCLK LCLK &kp RCTRL &lt LOWER SPACE &lt RAISE SPACE &kp RSHIFT &kp DEL  &kp PSCRN   &kp C_PP
             >;
 
@@ -129,16 +129,17 @@ behaviors {
 
             // ------------------------------------------------------------------------------------------------------------
             // | BTCLR | BT1  | BT2  |  BT3  |  BT4  |  BT5 |                |      |      |       |      |       |       |
-            // |       |      |      |  7   |  8   |   9  |                  |  <-  |  v   |   ^   | ->   |       |       |
-            // |       | ALT  | CTRL |  4   |  5   |   6  |                  |  H   |  J   |   K   |  L   |       |         |
-            // |       | UNDO |  0   |  1   |  2   |   3  |        |  |      |      |PG_DN | PG_UP |      |       |       |
+            // |       |      |      |  7   |  8   |   9  |                  |      |PG_DN | PG_UP |      |       |       |
+            // |       | ALT  | CTRL |  4   |  5   |   6  |                  |  H   |  J   |   K   |  L   |       |       |
+            // |       | UNDO |  0   |  1   |  2   |   3  |        |  |      |  <-  |  v   |   ^   |  ->  |       |       |
             //                |      |      |      |      |        |  |      |      |      |       |      |
 
             bindings = <
-&bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4                    &trans     &trans    &trans    &trans     &trans   &trans
-&trans      &trans       &trans         &kp N7        &kp N8        &kp N9                          &kp LEFT   &kp DOWN  &kp UP    &kp RIGHT  &trans   &trans
-&trans      &kp LALT      &kp LCTRL     &kp N4        &kp N5        &kp N6                          &kp H      &kp J     &kp K     &kp L      &trans    &trans
-&trans      &kp K_UNDO    &kp N0        &kp N1        &kp N2        &kp N3        &trans    &trans  &trans     &kp PG_DN &kp PG_UP &trans     &trans   &trans
+&bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4                    &trans     &trans    &trans    &trans    &trans   &trans
+&trans      &trans       &trans         &kp N7        &kp N8        &kp N9                          &trans     &kp PG_UP &kp PG_DN &trans    &trans   &trans
+&trans      &kp LALT      &kp LCTRL     &kp N4        &kp N5        &kp N6                          &kp H      &kp J     &kp K     &kp L     &trans   &trans
+&trans      &kp K_UNDO    &kp N0        &kp N1        &kp N2        &kp N3        &trans    &trans  &kp LEFT   &kp DOWN  &kp UP    &kp RIGHT &trans   &trans
+
                           &trans        &trans        &trans        &trans        &trans    &trans  &trans     &trans    &trans    &trans
             >;
 
